@@ -11,12 +11,15 @@
 int execute(char **tokens, int line_number, stack_t **stack)
 {
 	char *token_1 = tokens[0];
-	char *token_2 = tokens[1];
+	char *token_2 = NULL;
+	int int_token = 0;
 
 	if (strcmp(*tokens, "push") == 0)
 	{
-		pass; // To be completed
-	}
+		token_2 = tokens[1];
+		int_token = int_OK(token_2);
+	};
+	do_Functions(*tokens, int_token, stack, line_number);
 
 	free_everything(tokens);
 	return (0);

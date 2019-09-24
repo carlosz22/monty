@@ -42,7 +42,7 @@ typedef struct instruction_s
 void interpreter(char *file);
 int execute(char **tokens, int line_number, stack_t **stack);
 int free_everything(char **obj);
-
-
+char **_strtok(char *buff);
+char **tokenizer(char *value);
 
 #endif /* _MONTY_H_ */
