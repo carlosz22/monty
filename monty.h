@@ -37,4 +37,12 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Main functions */
+
+void interpreter(char *file);
+int execute(char **tokens, int line_number, stack_t **stack);
+int free_everything(char **obj);
+
+
+
 #endif /* _MONTY_H_ */
