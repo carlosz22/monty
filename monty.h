@@ -51,9 +51,10 @@ int execute(char **tokens, unsigned int line_number, stack_t **stack);
 int free_everything(char **obj);
 char **_strtok(char *buff);
 char **tokenizer(char *value);
-int do_Functions(char *token, unsigned int int_token, stack_t **stack, unsigned int line_number);
+int do_Functions(char *token, int int_token, stack_t **stack, unsigned int line_number);
 
 /* Opcode functions */
+void push_opc(stack_t **stack, int value,  unsigned int line_number);
 void pall_opc(stack_t **stack, unsigned int line_number);
 void pint_opc(stack_t **stack, unsigned int line_number);
 void pop_opc(stack_t **stack, unsigned int line_number);

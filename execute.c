@@ -12,7 +12,7 @@ int execute(char **tokens, unsigned int line_number, stack_t **stack)
 {
 	char *token_1 = tokens[0];
 	char *token_2 = NULL;
-	unsigned int int_token = 0;
+	int int_token = 0;
 
 	if (strcmp(*tokens, "push") == 0)
 	{

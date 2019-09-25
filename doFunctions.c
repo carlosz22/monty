@@ -8,7 +8,7 @@
  * @line_number: Number of line
  */
 
-int do_Functions(char *token, unsigned int int_token, char **stack, unsigned int line_number)
+int do_Functions(char *token, int int_token, char **stack, unsigned int line_number)
 {
 	int opcode = 0;
 
