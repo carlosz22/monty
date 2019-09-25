@@ -8,20 +8,20 @@
 
 int int_OK(char *value)
 {
-	int i;
+        int i = 0;
 
-	if (value == NULL)
-	{
-		return (-1);
-	}
+        if (value == NULL)
+                return (-1);
 
-	for (i = 0; *(value + i) != '\0'; i++)
-	{
-		if (isdigit(value[i]) == 0)
-		{
-			return (-1);
-		}
-	};
+        if (value[0] == '-')
+                i++;
 
-	return (0);
+        for (; *(value + i) != '\0'; i++)
+        {
+                if (isdigit(value[i]) == 0)
+                {
+                        return (-1);
+                }
+        };
+        return (0);
 }
