@@ -13,6 +13,11 @@ void pint_opc(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 
+	if (*stack == NULL)
+	{
+		printf("L<%i>: can't pint, stack empty", line_number);
+	};
+
 	while (tmp != NULL)
 	{
 		tmp = tmp->next;
