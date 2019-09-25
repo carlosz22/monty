@@ -17,5 +17,5 @@ char **tokenizer(char *value)
 		return (NULL);
 	}
 
-    return (tokens);
+	return (tokens);
 }
