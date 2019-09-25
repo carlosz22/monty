@@ -10,7 +10,7 @@
 void interpreter(char *file)
 {
 	char *buffer = NULL;
-	stack_t *stack;
+	stack_t *stack = NULL;
 	size_t size = 100;
 	unsigned int line_number = 0;
 	char **tokens = NULL;

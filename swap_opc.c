@@ -22,10 +22,10 @@ void swap_opc(stack_t **stack, unsigned int line_number)
 	};
 	while (i < count)
 	{
-		tmp2 = tmp2->next
+		tmp2 = tmp2->next;
 	};
 	tmp1->next = tmp1->prev;
 	tmp1->prev = tmp2->prev;
-	tmp2->prev = tmp->next;
+	tmp2->prev = tmp2->next;
 	tmp2->next = NULL;
 }

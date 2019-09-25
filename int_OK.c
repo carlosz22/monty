@@ -15,7 +15,7 @@ int int_OK(char *value)
 		return (-1);
 	}
 
-	for (i = 0; value[i] != NULL; i++)
+	for (i = 0; *(value + i) != '\0'; i++)
 	{
 		if (isdigit(value[i]) == 0)
 		{

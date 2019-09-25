@@ -9,15 +9,15 @@
 
 void pall_opc(stack_t **stack, unsigned int line_number)
 {
-	stack_t tmp;
+	stack_t *tmp;
 
 	tmp = *stack;
 
-	while (tmp != NULL)
+	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
 	};
-	tmp = tmp->prev;
+
 	while (tmp != NULL)
 	{
 		printf("%i\n", tmp->n);

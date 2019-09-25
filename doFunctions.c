@@ -8,20 +8,20 @@
  * @line_number: Number of line
  */
 
-int do_Functions(char *token, int int_token, char **stack, unsigned int line_number)
+int do_Functions(char *token, int int_token, stack_t **stack, unsigned int line_number)
 {
-	int opcode = 0;
+	int opc = 0;
 
 	instruction_t opcodes_Fun[] = {
 	{"pall", pall_opc}, {"pint", pint_opc},
 	{"pop", pop_opc}, {"swap", swap_opc},
-	{"odd", odd_opc}, {"nop", nop_opc},
 	{NULL, NULL}
 	};
 
-	if (strcmp(token, "push"))
+	if (strcmp(token, "push") == 0)
 	{
-		pint_opc(stack, int_token);
+		push_opc(stack, int_token, line_number);
+		return (0);
 	};
 
 	for (opc = 0; opcodes_Fun[opc].opcode != NULL; opc++)
@@ -29,12 +29,15 @@ int do_Functions(char *token, int int_token, char **stack, unsigned int line_num
 		if (strcmp(opcodes_Fun[opc].opcode, token) == 0)
 		{
 			opcodes_Fun[opc].f(stack, line_number);
+			return (0);
 		};
 	}
 
 	if (opcodes_Fun[opc].opcode == NULL)
 	{
-		print("Error");
+		printf("Error");
 		exit(EXIT_FAILURE);
 	};
+
+	return (0);
 }

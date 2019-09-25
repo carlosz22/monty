@@ -15,11 +15,11 @@ void push_opc(stack_t **stack, int value, unsigned int line_number)
 	new = (stack_t *) malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		print("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
-	new->n;
+	new->n = value;
 
 	if (*stack == NULL)
 	{
@@ -28,10 +28,14 @@ void push_opc(stack_t **stack, int value, unsigned int line_number)
 		*stack = new;
 	}
 
-	while (tmp->next != NULL)
-		tmp = tmp->next;
+	else
+	{
+		while (tmp->next != NULL)
+			tmp = tmp->next;
 
-	new->prev = tmp;
-	new->next = NULL;
-	tmp->next = new;
+		new->prev = tmp;
+		new->next = NULL;
+		tmp->next = new;
+
+	}
 }

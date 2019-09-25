@@ -11,7 +11,7 @@ void pop_opc(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
 
-	while (1)
+	while (tmp != NULL)
 	{
 		if (tmp->next == NULL)
 		{
@@ -25,5 +25,6 @@ void pop_opc(stack_t **stack, unsigned int line_number)
 			}
 			free(tmp);
 		}
+		tmp = tmp->next;
 	}
 }
