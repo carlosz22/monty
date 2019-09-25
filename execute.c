@@ -8,11 +8,11 @@
  * Return: 0
  */
 
-int execute(char **tokens, int line_number, stack_t **stack)
+int execute(char **tokens, unsigned int line_number, stack_t **stack)
 {
 	char *token_1 = tokens[0];
 	char *token_2 = NULL;
-	int int_token = 0;
+	unsigned int int_token = 0;
 
 	if (strcmp(*tokens, "push") == 0)
 	{
@@ -20,7 +20,6 @@ int execute(char **tokens, int line_number, stack_t **stack)
 		int_token = int_OK(token_2);
 	};
 	do_Functions(*tokens, int_token, stack, line_number);
-
 	free_everything(tokens);
 	return (0);
 }

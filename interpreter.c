@@ -13,11 +13,11 @@ void interpreter(char *file)
 	char *buffer = NULL;
 	stack_t *stack;
 	size_t size;
-	int line = 0;
+	unsigned int line_number = 0;
 	char **tokens = NULL;
 	FILE *fp;
 
-	fp = open(file, R_ONLY);
+	fp = fopen(file, R_ONLY);
 	if (fp < 0)
 	{
 		printf("Error");
@@ -25,10 +25,10 @@ void interpreter(char *file)
 	}
 	while (getline(&buffer, &size, fp) != 1)
 	{
-		line++;
+		line_number++;
 		tokens = tokenizer(buffer);
 		free(buffer);
 		execute(tokens, line, &stack);
 	}
-	close(fp);
+	fclose(fp);
 }
