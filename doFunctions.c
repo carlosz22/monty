@@ -18,7 +18,7 @@ stack_t **stack, unsigned int line_number)
 	instruction_t opcodes_Fun[] = {
 	{"pall", pall_opc}, {"pint", pint_opc},
 	{"pop", pop_opc}, {"swap", swap_opc},
-	{NULL, NULL}
+	{"add", add_opc}, {NULL, NULL}
 	};
 
 	if (strcmp(token, "push") == 0)
