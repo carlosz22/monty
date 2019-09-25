@@ -28,15 +28,9 @@ void interpreter(char *file)
 	{
 		i = 0;
 		line_number++;
-		printf("%s\n", buffer);
 		tokens = tokenizer(buffer);
-		/* free(buffer); */
-		while (tokens[i])
-		{
-			printf("%s\n", tokens[i]);
-			i++;
-		};
-		/**execute(tokens, line, &stack);**/
+		if (tokens[0] != NULL)
+			execute(tokens, &stack, line_number);
 	}
 	free(buffer);
 	fclose(fp);
