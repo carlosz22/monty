@@ -11,6 +11,7 @@ void add_opc(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 	int lastN = 0, prevN = 0, sum = 0;
+	(void)line_number;
 
 	tmp = *stack;
 

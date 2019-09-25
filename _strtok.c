@@ -45,7 +45,7 @@ int _strLen(char *str)
 }
 
 /**
- * _strtok1 - Return an array of tokens
+ * _strtok - Return an array of tokens
  * @buff: String
  * Return: An array
  */
