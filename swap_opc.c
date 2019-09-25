@@ -15,7 +15,7 @@ void swap_opc(stack_t **stack, unsigned int line_number)
 	tmp1 = *stack;
 	tmp2 = *stack;
 
-	while (tmp1)
+	while (tmp1->next)
 	{
 		count++;
 		tmp1 = tmp1->next;
