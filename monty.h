@@ -47,7 +47,7 @@ extern int push_int;
 /* Main functions */
 
 void interpreter(char *file);
-int execute(char **tokens, unsigned int line_number, stack_t **stack);
+int execute(char **tokens, stack_t **stack, unsigned int line_number);
 int free_everything(char **obj);
 char **_strtok(char *buff);
 char **tokenizer(char *value);

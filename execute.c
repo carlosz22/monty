@@ -8,7 +8,7 @@
  * Return: 0
  */
 
-int execute(char **tokens, unsigned int line_number, stack_t **stack)
+int execute(char **tokens, stack_t **stack, unsigned int line_number)
 {
 	char *token_1 = tokens[0];
 	char *token_2 = NULL;
