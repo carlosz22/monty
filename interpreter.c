@@ -1,11 +1,10 @@
 #include "monty.h"
 
 /**
- * interpreter - doubly linked list representation of a stack (or queue)
- * @argc: Argument count
- * @argv: Array of arguments
+ * interpreter - inteprete and process each line of a Monty byte code
+ * @file: Path to the file
  *
- * Return: 0
+ * Return: Nothing
  */
 
 void interpreter(char *file)
@@ -21,20 +20,17 @@ void interpreter(char *file)
 	fp = fopen(file, "r");
 	if (fp < 0)
 	{
-		printf("Error");
+		fprintf(stderr, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	};
-	buffer = malloc(sizeof(char) * size);
-	if (buffer == NULL)
-	{
-		exit(EXIT_FAILURE);
-	}
+
 	while (getline(&buffer, &size, fp) != -1)
 	{
+		i = 0;
 		line_number++;
-		printf("%s", buffer);
+		printf("%s\n", buffer);
 		tokens = tokenizer(buffer);
-		/*free(buffer);*/
+		/* free(buffer); */
 		while (tokens[i])
 		{
 			printf("%s\n", tokens[i]);
@@ -42,5 +38,6 @@ void interpreter(char *file)
 		};
 		/**execute(tokens, line, &stack);**/
 	}
+	free(buffer);
 	fclose(fp);
 }

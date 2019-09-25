@@ -5,14 +5,14 @@
  * @argc: Argument count
  * @argv: Array of arguments
  *
- * Return: 0
+ * Return: 0 on success
  */
 
 int main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		printf("Error"); // Organizar
+		fprintf(stderr, "USAGE: monty %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	interpreter(argv[1]);

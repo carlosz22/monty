@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * hsh_splitpath - Split the line wrote in the console.
+ * tokenizer - Tokenize a string to an array pointer.
  * @value: Line wrote in console.
- * Return: An array with all words splited.
+ * Return: An array with all words splittBed.
  */
 
 char **tokenizer(char *value)
