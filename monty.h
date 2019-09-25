@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
+#include <ctype.h>
 
 /* Structures */
 
@@ -47,11 +48,12 @@ extern int push_int;
 /* Main functions */
 
 void interpreter(char *file);
-int execute(char **tokens, stack_t **stack, unsigned int line_number);
+int execute(char **, stack_t **, unsigned int);
 void free_everything(char **obj);
 char **_strtok(char *buff);
 char **tokenizer(char *value);
-int do_Functions(char *token, int int_token, stack_t **stack, unsigned int line_number);
+int do_Functions(char *, int, stack_t **, unsigned int);
+int int_OK(char *value);
 
 /* Opcode functions */
 void push_opc(stack_t **stack, int value,  unsigned int line_number);

@@ -2,8 +2,9 @@
 
 /**
  * execute - doubly linked list representation of a stack (or queue)
- * @argc: Argument count
- * @argv: Array of arguments
+ * @tokens: Array of tokens
+ * @stack: Doubly linked list
+ * @line_number: Line number
  *
  * Return: 0
  */

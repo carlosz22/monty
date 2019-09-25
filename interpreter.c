@@ -15,10 +15,9 @@ void interpreter(char *file)
 	unsigned int line_number = 0;
 	char **tokens = NULL;
 	FILE *fp;
-	int i = 0;
 
 	fp = fopen(file, "r");
-	if (fp < 0)
+	if (fp == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
@@ -26,7 +25,6 @@ void interpreter(char *file)
 
 	while (getline(&buffer, &size, fp) != -1)
 	{
-		i = 0;
 		line_number++;
 		tokens = tokenizer(buffer);
 		if (tokens[0] != NULL)

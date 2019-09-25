@@ -6,9 +6,12 @@
  * @int_token: Integer to push
  * @stack: Doubly linked list
  * @line_number: Number of line
+ *
+ * Return: 0 in success or -1 if error
  */
 
-int do_Functions(char *token, int int_token, stack_t **stack, unsigned int line_number)
+int do_Functions(char *token, int int_token,
+stack_t **stack, unsigned int line_number)
 {
 	int opc = 0;
 
@@ -39,5 +42,5 @@ int do_Functions(char *token, int int_token, stack_t **stack, unsigned int line_
 		exit(EXIT_FAILURE);
 	};
 
-	return (0);
+	return (-1);
 }
