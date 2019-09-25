@@ -7,6 +7,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <string.h>
+
+/* Structures */
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,12 +40,33 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Global variables */
+extern int push_int;
+
+
 /* Main functions */
 
 void interpreter(char *file);
-int execute(char **tokens, int line_number, stack_t **stack);
+int execute(char **tokens, unsigned int line_number, stack_t **stack);
 int free_everything(char **obj);
 char **_strtok(char *buff);
 char **tokenizer(char *value);
+int do_Functions(char *token, unsigned int int_token, stack_t **stack, unsigned int line_number);
+
+/* Opcode functions */
+void pall_opc(stack_t **stack, unsigned int line_number);
+void pint_opc(stack_t **stack, unsigned int line_number);
+void pop_opc(stack_t **stack, unsigned int line_number);
+void swap_opc(stack_t **stack, unsigned int line_number);
+void add_opc(stack_t **stack, unsigned int line_number);
+void sub_opc(stack_t **stack, unsigned int line_number);
+void div_opc(stack_t **stack, unsigned int line_number);
+void mul_opc(stack_t **stack, unsigned int line_number);
+void mod_opc(stack_t **stack, unsigned int line_number);
+void pchar_opc(stack_t **stack, unsigned int line_number);
+void pstr_opc(stack_t **stack, unsigned int line_number);
+void rotl_opc(stack_t **stack, unsigned int line_number);
+void rotr_opc(stack_t **stack, unsigned int line_number);
+void nop_opc(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H_ */

@@ -8,8 +8,10 @@
  * @line_number: Number of line
  */
 
-void do_Functions(char *token, unsigned int int_token, char **stack, unsigned int line_number)
+int do_Functions(char *token, unsigned int int_token, char **stack, unsigned int line_number)
 {
+	int opcode = 0;
+
 	instruction_t opcodes_Fun[] = {
 	{"pall", pall_opc}, {"pint", pint_opc},
 	{"pop", pop_opc}, {"swap", swap_opc},
