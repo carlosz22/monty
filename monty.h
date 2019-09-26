@@ -41,7 +41,17 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/* Global variables */
+/**
+ * struct data_s - Store global variables
+ * @buffer: String of Getline
+ * @tokens: Buffer tokenize
+ * @stack: Stack
+ * @fp: File descriptor
+ *
+ * Description: Variables to store all the
+ * values
+ */
+
 typedef struct data_s
 {
 	char *buffer;
@@ -49,6 +59,8 @@ typedef struct data_s
 	stack_t *stack;
 	FILE *fp;
 } data_t;
+
+/*Global Variables*/
 
 extern data_t data;
 typedef stack_t dlistint_t;
