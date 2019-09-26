@@ -11,7 +11,6 @@ void swap_opc(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp1, *tmp2;
 	int i = 0, count = 0, num1 = 0, num2 = 0;
-	(void)line_number;
 
 	tmp1 = *stack;
 	tmp2 = *stack;
@@ -21,6 +20,12 @@ void swap_opc(stack_t **stack, unsigned int line_number)
 		count++;
 		tmp1 = tmp1->next;
 	};
+	if (count < 2)
+	{
+		fprintf(stderr, "L%i: can't swap, stack too short\n", line_number);
+		free_all(1);
+		exit(EXIT_FAILURE);
+	}
 	while ((i + 1) < count)
 	{
 		i++;
