@@ -19,16 +19,18 @@ stack_t **stack, unsigned int line_number)
 	{"pall", pall_opc}, {"pint", pint_opc},
 	{"pop", pop_opc}, {"swap", swap_opc},
 	{"add", add_opc}, {"nop", nop_opc},
-	{NULL, nop_opc}
+	{NULL, NULL}
 	};
+	/*printf("token: %s\n", token);*/
 	if (strcmp(token, "push") == 0)
 	{
 		push_opc(stack, int_token, line_number);
 		return (0);
 	};
 
-	for (opc = 0; opc < 7; opc++)
+	for (opc = 0; opc < 6 ; opc++)
 	{
+		/*printf("opc: %i strcmp: %i\n", opc, strcmp(opcodes_Fun[opc].opcode, token));*/
 		if (strcmp(opcodes_Fun[opc].opcode, token) == 0)
 		{
 			opcodes_Fun[opc].f(stack, line_number);
@@ -36,7 +38,7 @@ stack_t **stack, unsigned int line_number)
 		};
 	}
 
-	if (opc == 7)
+	if (opc <= 7)
 	{
 		fprintf(stderr, "L%i: unknown instruction %s\n", line_number, token);
 		exit(EXIT_FAILURE);
