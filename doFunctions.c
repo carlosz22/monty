@@ -21,7 +21,6 @@ stack_t **stack, unsigned int line_number)
 	{"add", add_opc}, {"nop", nop_opc},
 	{NULL, NULL}
 	};
-	/*printf("token: %s\n", token);*/
 	if (strcmp(token, "push") == 0)
 	{
 		push_opc(stack, int_token, line_number);
@@ -30,7 +29,6 @@ stack_t **stack, unsigned int line_number)
 
 	for (opc = 0; opc < 6 ; opc++)
 	{
-		/*printf("opc: %i strcmp: %i\n", opc, strcmp(opcodes_Fun[opc].opcode, token));*/
 		if (strcmp(opcodes_Fun[opc].opcode, token) == 0)
 		{
 			opcodes_Fun[opc].f(stack, line_number);
