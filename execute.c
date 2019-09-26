@@ -2,6 +2,8 @@
 
 /**
  * execute - doubly linked list representation of a stack (or queue)
+ * @fp: File descriptor
+ * @buffer: Buffer from tokenizer
  * @tokens: Array of tokens
  * @stack: Doubly linked list
  * @line_number: Line number
@@ -9,7 +11,8 @@
  * Return: 0
  */
 
-int execute(char **tokens, stack_t **stack, unsigned int line_number)
+int execute(FILE *fp, char *buffer, char **tokens,
+stack_t **stack, unsigned int line_number)
 {
 	char *token_1 = tokens[0];
 	char *token_2 = NULL;
@@ -18,10 +21,11 @@ int execute(char **tokens, stack_t **stack, unsigned int line_number)
 	if (strcmp(*tokens, "push") == 0)
 	{
 		token_2 = tokens[1];
-		if (int_OK(token_2) == 0)
-			int_token = atoi(token_2);
+		int_token = atoi(token_2);
 	};
+	check_errors(fp, buffer, token_1, token_2, stack, line_number);
+	if (strcmp(token_1, "pall") == 0 && *stack == NULL)
+		return (0);
 	do_Functions(token_1, int_token, stack, line_number);
-	free_everything(tokens);
 	return (0);
 }
