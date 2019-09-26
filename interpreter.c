@@ -27,7 +27,8 @@ void interpreter(char *file)
 	{
 		line_number++;
 		tokens = tokenizer(buffer);
-		execute(fp, buffer, tokens, &stack, line_number);
+		if (tokens[0] != NULL)
+			execute(fp, buffer, tokens, &stack, line_number);
 	}
 	/*_free(stack);*/
 	free(buffer);
