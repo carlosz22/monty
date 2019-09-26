@@ -14,6 +14,9 @@ void pall_opc(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 
+	if (tmp == NULL)
+		return;
+
 	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
