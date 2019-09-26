@@ -15,10 +15,11 @@
 void check_errors(FILE *fp, char *buffer, char *token_1,
 char *token_2, stack_t **stack, unsigned int line_number)
 {
-	(void)fp;
 	char *opcodes[] = {"push", "pall", "pop", "pint", "swap", "add", "nop", NULL};
 	int delete = 0, i = 0;
 
+	(void)line_number;
+	(void)fp;
 	if (strcmp(token_1, "push") == 0)
 	{
 		if (int_OK(token_2) != 0)
