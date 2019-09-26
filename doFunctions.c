@@ -39,7 +39,7 @@ stack_t **stack, unsigned int line_number)
 
 	if (opc == 7)
 	{
-		fprintf(stderr,"L%i: unknown instruction %s\n", line_number, token);
+		fprintf(stderr, "L%i: unknown instruction %s\n", line_number, token);
 		exit(EXIT_FAILURE);
 	};
 
