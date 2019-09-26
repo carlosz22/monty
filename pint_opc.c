@@ -15,7 +15,7 @@ void pint_opc(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		printf("L%i: can't pint, stack empty", line_number);
+		printf("L%i: can't pint, stack empty\n", line_number);
 		free_all(1);
 		exit(EXIT_FAILURE);
 	};
