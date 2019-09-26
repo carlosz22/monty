@@ -21,6 +21,11 @@ stack_t **stack, unsigned int line_number)
 	if (strcmp(*tokens, "push") == 0)
 	{
 		token_2 = tokens[1];
+		if (int_OK(token_2) == -1)
+		{
+			fprintf(stderr,"L%i: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 		int_token = atoi(token_2);
 	};
 	check_errors(fp, buffer, token_1, token_2, stack, line_number);

@@ -22,7 +22,7 @@ char *token_2, stack_t **stack, unsigned int line_number)
 	(void)fp;
 	if (strcmp(token_1, "push") == 0)
 	{
-		if (int_OK(token_2) != 0)
+		if (int_OK(token_2) != 0 || token_2 == NULL)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			delete = 1;
