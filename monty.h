@@ -48,10 +48,11 @@ extern int push_int;
 /* Main functions */
 
 void interpreter(char *file);
-int execute(char **, stack_t **, unsigned int);
+int execute(FILE *, char *, char **, stack_t **, unsigned int);
 void free_everything(char **obj);
 char **_strtok(char *buff);
 char **tokenizer(char *value);
+void check_errors(FILE *, char *, char *, char *, stack_t **, unsigned int);
 int do_Functions(char *, int, stack_t **, unsigned int);
 int int_OK(char *value);
 
