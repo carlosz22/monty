@@ -14,11 +14,12 @@ int do_Functions(char *token, int int_token,
 stack_t **stack, unsigned int line_number)
 {
 	int opc = 0;
-
+	/* Add 1 to opc if functions are added*/
 	instruction_t opcodes_Fun[] = {
 	{"pall", pall_opc}, {"pint", pint_opc},
 	{"pop", pop_opc}, {"swap", swap_opc},
-	{"add", add_opc}, {NULL, NULL}
+	{"add", add_opc}, {"nop", nop_opc},
+	{NULL, nop_opc}
 	};
 
 	if (strcmp(token, "push") == 0)
@@ -27,7 +28,7 @@ stack_t **stack, unsigned int line_number)
 		return (0);
 	};
 
-	for (opc = 0; opcodes_Fun[opc].opcode != NULL; opc++)
+	for (opc = 0; opc < 7; opc++)
 	{
 		if (strcmp(opcodes_Fun[opc].opcode, token) == 0)
 		{
@@ -36,9 +37,9 @@ stack_t **stack, unsigned int line_number)
 		};
 	}
 
-	if (opcodes_Fun[opc].opcode == NULL)
+	if (opc == 7)
 	{
-		printf("Error");
+		fprintf(stderr,"L%i: unknown instruction %s\n", line_number, token);
 		exit(EXIT_FAILURE);
 	};
 
