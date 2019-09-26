@@ -1,5 +1,7 @@
 #include "monty.h"
 
+data_t data = {NULL, NULL, NULL, NULL};
+
 /**
  * interpreter - inteprete and process each line of a Monty byte code
  * @file: Path to the file
@@ -9,28 +11,27 @@
 
 void interpreter(char *file)
 {
-	char *buffer = NULL;
-	stack_t *stack = NULL;
 	size_t size = 100;
 	unsigned int line_number = 0;
-	char **tokens = NULL;
-	FILE *fp;
 
-	fp = fopen(file, "r");
-	if (fp == NULL)
+	data.fp = fopen(file, "r");
+	if (data.fp == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	};
 
-	while (getline(&buffer, &size, fp) != -1)
+	while (getline(&data.buffer, &size, data.fp) != -1)
 	{
 		line_number++;
-		tokens = tokenizer(buffer);
-		if (tokens[0] != NULL)
-			execute(fp, buffer, tokens, &stack, line_number);
-	}
-	/*_free(stack);*/
-	free(buffer);
-	fclose(fp);
+		data.tokens = tokenizer(data.buffer);
+		if (data.tokens[0] == NULL)
+		{
+			free_all(0);
+			continue;
+		};
+		execute(line_number);
+		free_all(0);
+	};
+	free_all(1);
 }

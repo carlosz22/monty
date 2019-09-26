@@ -7,10 +7,10 @@
  * Return: Nothing.
  */
 
-void _free(stack_t **head)
+void free_doubly(dlistint_t *head)
 {
-	stack_t *next_node = *head;
-	stack_t *current_node = *head;
+	dlistint_t *next_node = head;
+	dlistint_t *current_node = head;
 
 	while (current_node != NULL)
 	{

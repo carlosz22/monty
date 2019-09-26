@@ -42,20 +42,30 @@ typedef struct instruction_s
 } instruction_t;
 
 /* Global variables */
-extern int push_int;
+typedef struct data_s
+{
+	char *buffer;
+	char **tokens;
+	stack_t *stack;
+	FILE *fp;
+} data_t;
 
+extern data_t data;
+typedef stack_t dlistint_t;
 
 /* Main functions */
 
 void interpreter(char *file);
-int execute(FILE *, char *, char **, stack_t **, unsigned int);
+int execute(unsigned int);
 void free_everything(char **obj);
 char **_strtok(char *buff);
 char **tokenizer(char *value);
-void check_errors(FILE *, char *, char *, char *, stack_t **, unsigned int);
-int do_Functions(char *, int, stack_t **, unsigned int);
+void check_errors(char *, char *, unsigned int);
+int do_Functions(char *, int, unsigned int);
 int int_OK(char *value);
-void _free(stack_t **head);
+void free_doubly(dlistint_t *head);
+void free_all(int all);
+void free_everything(char **args);
 
 /* Opcode functions */
 void push_opc(stack_t **stack, int value,  unsigned int line_number);
