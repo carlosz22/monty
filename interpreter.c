@@ -30,7 +30,7 @@ void interpreter(char *file)
 		if (tokens[0] != NULL)
 			execute(fp, buffer, tokens, &stack, line_number);
 	}
-	/*_free(stack);*/
+	_free(&stack);
 	free(buffer);
 	fclose(fp);
 }

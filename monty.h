@@ -52,7 +52,9 @@ int execute(FILE *, char *, char **, stack_t **, unsigned int);
 void free_everything(char **obj);
 char **_strtok(char *buff);
 char **tokenizer(char *value);
-void check_errors(FILE *, char *, char *, char *, stack_t **, unsigned int);
+void check_errors(FILE *, char *, char **, char *,
+char *, stack_t **, unsigned int);
+void liberate(FILE *, char *, char **, stack_t **);
 int do_Functions(char *, int, stack_t **, unsigned int);
 int int_OK(char *value);
 void _free(stack_t **head);

@@ -23,12 +23,12 @@ stack_t **stack, unsigned int line_number)
 		token_2 = tokens[1];
 		if (int_OK(token_2) == -1)
 		{
-			fprintf(stderr,"L%i: usage: push integer\n", line_number);
+			fprintf(stderr, "L%i: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 		int_token = atoi(token_2);
 	};
-	check_errors(fp, buffer, token_1, token_2, stack, line_number);
+	check_errors(fp, buffer, tokens, token_1, token_2, stack, line_number);
 	if (strcmp(token_1, "pall") == 0 && *stack == NULL)
 		return (0);
 	do_Functions(token_1, int_token, stack, line_number);
