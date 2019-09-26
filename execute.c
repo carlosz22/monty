@@ -2,10 +2,6 @@
 
 /**
  * execute - doubly linked list representation of a stack (or queue)
- * @fp: File descriptor
- * @buffer: Buffer from tokenizer
- * @tokens: Array of tokens
- * @stack: Doubly linked list
  * @line_number: Line number
  *
  * Return: 0
@@ -22,7 +18,7 @@ int execute(unsigned int line_number)
 		token_2 = data.tokens[1];
 		if (int_OK(token_2) == -1)
 		{
-			fprintf(stderr,"L%i: usage: push integer\n", line_number);
+			fprintf(stderr, "L%i: usage: push integer\n", line_number);
 			free_all(1);
 			exit(EXIT_FAILURE);
 		}

@@ -4,7 +4,6 @@
  * do_Functions - Find the functions of the opcodes to execute
  * @token: Opcode name
  * @int_token: Integer to push
- * @stack: Doubly linked list
  * @line_number: Number of line
  *
  * Return: 0 in success or -1 if error

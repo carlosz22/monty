@@ -2,11 +2,8 @@
 
 /**
  * check_errors - doubly linked list representation of a stack (or queue)
- * @fp: File descriptor
- * @buffer: Buffer from tokenizer
  * @token_1: First token
  * @token_2: Second token
- * @stack: Doubly linked list
  * @line_number: Line number
  *
  * Return: 0
