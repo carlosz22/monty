@@ -21,7 +21,6 @@ stack_t **stack, unsigned int line_number)
 	{"add", add_opc}, {"nop", nop_opc},
 	{NULL, nop_opc}
 	};
-
 	if (strcmp(token, "push") == 0)
 	{
 		push_opc(stack, int_token, line_number);

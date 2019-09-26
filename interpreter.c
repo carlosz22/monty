@@ -29,6 +29,7 @@ void interpreter(char *file)
 		tokens = tokenizer(buffer);
 		execute(fp, buffer, tokens, &stack, line_number);
 	}
+	/*_free(stack);*/
 	free(buffer);
 	fclose(fp);
 }

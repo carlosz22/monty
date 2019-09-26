@@ -24,7 +24,8 @@ stack_t **stack, unsigned int line_number)
 		int_token = atoi(token_2);
 	};
 	check_errors(fp, buffer, token_1, token_2, stack, line_number);
+	if (strcmp(token_1, "pall") == 0 && *stack == NULL)
+		return (0);
 	do_Functions(token_1, int_token, stack, line_number);
-	/* free_everything(tokens); */
 	return (0);
 }

@@ -55,6 +55,7 @@ char **tokenizer(char *value);
 void check_errors(FILE *, char *, char *, char *, stack_t **, unsigned int);
 int do_Functions(char *, int, stack_t **, unsigned int);
 int int_OK(char *value);
+void _free(stack_t **head);
 
 /* Opcode functions */
 void push_opc(stack_t **stack, int value,  unsigned int line_number);
