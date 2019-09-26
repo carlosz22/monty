@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * free_dlistint - free all the linked list
+ * free_doubly - free all the linked list
  * @head: Head pointer
  *
  * Return: Nothing.
