@@ -12,7 +12,7 @@
 void check_errors(char *token_1, char *token_2, unsigned int line_number)
 {
 	char *opcodes[] = {"push", "pall", "pop", "pint", "swap", "add",
-"sub", "mul", "nop", NULL};
+"sub", "mul", "div", "nop", NULL};
 	int delete = 0, i = 0;
 
 	(void)line_number;
@@ -29,7 +29,7 @@ void check_errors(char *token_1, char *token_2, unsigned int line_number)
 		delete = 1;
 		return;
 	};
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (strcmp(token_1, opcodes[i]) == 0 && &(data.stack) == NULL &&
 			strcmp(token_1, "push") != 0)
