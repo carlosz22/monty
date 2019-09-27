@@ -22,7 +22,7 @@ void add_opc(stack_t **stack, unsigned int line_number)
 		count++;
 		tmp = tmp->next;
 	};
-	if (count < 2)
+	if (count < 1)
 	{
 		fprintf(stderr, "L%i: can't add, stack too short\n", line_number);
 		free_all(1);
