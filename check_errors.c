@@ -11,7 +11,8 @@
 
 void check_errors(char *token_1, char *token_2, unsigned int line_number)
 {
-	char *opcodes[] = {"push", "pall", "pop", "pint", "swap", "add", "sub", "nop", NULL};
+	char *opcodes[] = {"push", "pall", "pop", "pint", "swap", "add",
+"sub", "nop", NULL};
 	int delete = 0, i = 0;
 
 	(void)line_number;
