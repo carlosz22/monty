@@ -38,7 +38,7 @@ void mod_opc(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	mod = prevN / lastN;
+	mod = prevN % lastN;
 	tmp->prev->n = mod;
 	tmp->prev->next = NULL;
 	free(tmp);
