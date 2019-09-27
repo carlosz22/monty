@@ -18,12 +18,10 @@ void pint_opc(stack_t **stack, unsigned int line_number)
 		printf("L%i: can't pint, stack empty\n", line_number);
 		free_all(1);
 		exit(EXIT_FAILURE);
-	};
+	}
 
 	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
-	};
-
-	printf("%i\n", tmp->n);
+	}
 }
