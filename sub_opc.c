@@ -29,7 +29,7 @@ void sub_opc(stack_t **stack, unsigned int line_number)
 
 	lastN = tmp->n;
 	prevN = tmp->prev->n;
-	sub = lastN - prevN;
+	sub = prevN - lastN;
 	tmp->prev->n = sub;
 	tmp->prev->next = NULL;
 	free(tmp);
