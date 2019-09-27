@@ -36,7 +36,7 @@ int do_Functions(char *token, int int_token, unsigned int line_number)
 		};
 	}
 
-	if (opc <= 8)
+	if (opc = 8)
 	{
 		fprintf(stderr, "L%i: unknown instruction %s\n", line_number, token);
 		exit(EXIT_FAILURE);
