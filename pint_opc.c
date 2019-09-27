@@ -15,13 +15,15 @@ void pint_opc(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		printf("L%i: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		free_all(1);
 		exit(EXIT_FAILURE);
-	}
+	};
 
 	while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
-	}
+	};
+
+	printf("%d\n", tmp->n);
 }
