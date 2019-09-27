@@ -19,7 +19,8 @@ int do_Functions(char *token, int int_token, unsigned int line_number)
 	{"add", add_opc}, {"nop", nop_opc},
 	{"sub", sub_opc}, {"mul", mul_opc},
 	{"div", div_opc}, {"mod", mod_opc},
-	{"pchar", pchar_opc}, {NULL, NULL}
+	{"pchar", pchar_opc}, {"pstr", pstr_opc},
+	{NULL, NULL}
 	};
 	if (strcmp(token, "push") == 0)
 	{
@@ -27,7 +28,7 @@ int do_Functions(char *token, int int_token, unsigned int line_number)
 		return (0);
 	};
 
-	for (opc = 0; opc < 11 ; opc++)
+	for (opc = 0; opc < 12 ; opc++)
 	{
 		if (strcmp(opcodes_Fun[opc].opcode, token) == 0)
 		{
@@ -36,7 +37,7 @@ int do_Functions(char *token, int int_token, unsigned int line_number)
 		};
 	}
 
-	if (opc == 11)
+	if (opc == 12)
 	{
 		fprintf(stderr, "L%i: unknown instruction %s\n", line_number, token);
 		exit(EXIT_FAILURE);
