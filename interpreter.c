@@ -25,7 +25,7 @@ void interpreter(char *file)
 	{
 		line_number++;
 		data.tokens = tokenizer(data.buffer);
-		if (data.tokens[0] == NULL)
+		if (data.tokens[0] == NULL || data.tokens[0][0] == '#')
 		{
 			free_all(0);
 			continue;
