@@ -26,5 +26,14 @@ void pchar_opc(stack_t **stack, unsigned int line_number)
 	};
 
 	if (tmp->n >= 0 && tmp->n <= 255)
+	{
 		putchar(tmp->n);
+		putchar('\n');
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		free_all(1);
+		exit(EXIT_FAILURE);
+	}
 }
