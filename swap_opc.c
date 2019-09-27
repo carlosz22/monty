@@ -10,7 +10,7 @@
 void swap_opc(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp1, *tmp2;
-	int i = 0, count = 0, num1 = 0, num2 = 0;
+	int i = 0, count = 1, num1 = 0, num2 = 0;
 
 	tmp1 = *stack;
 	tmp2 = *stack;
