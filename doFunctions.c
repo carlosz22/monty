@@ -17,7 +17,7 @@ int do_Functions(char *token, int int_token, unsigned int line_number)
 	{"pall", pall_opc}, {"pint", pint_opc},
 	{"pop", pop_opc}, {"swap", swap_opc},
 	{"add", add_opc}, {"nop", nop_opc},
-	{"sub", sub_opc},
+	{"sub", sub_opc}, {"mul", mul_opc},
 	{NULL, NULL}
 	};
 	if (strcmp(token, "push") == 0)
