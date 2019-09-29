@@ -15,13 +15,13 @@ void mul_opc(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 
-	while (tmp->next)
+	while (tmp && tmp->next)
 	{
 		count++;
 		tmp = tmp->next;
 	};
 
-	if (count < 1)
+	if (count < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		free_all(1);
