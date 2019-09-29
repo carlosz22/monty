@@ -13,11 +13,9 @@ void add_opc(stack_t **stack, unsigned int line_number)
 	int lastN = 0, prevN = 0, sum = 0;
 	int count = 0;
 
-	(void)line_number;
-
 	tmp = *stack;
 
-	while (tmp->next)
+	while (tmp && tmp->next)
 	{
 		count++;
 		tmp = tmp->next;

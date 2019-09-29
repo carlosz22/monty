@@ -11,7 +11,13 @@ void pop_opc(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
 
-	(void)line_number;
+	if (tmp == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		free_all(1);
+		exit(EXIT_FAILURE);
+
+	}
 
 	while (tmp != NULL)
 	{

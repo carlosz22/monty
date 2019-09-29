@@ -15,6 +15,14 @@ void swap_opc(stack_t **stack, unsigned int line_number)
 	tmp1 = *stack;
 	tmp2 = *stack;
 
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		free_all(1);
+		exit(EXIT_FAILURE);
+
+	}
+
 	while (tmp1->next)
 	{
 		count++;
