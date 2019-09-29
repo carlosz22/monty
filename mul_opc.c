@@ -15,7 +15,7 @@ void mul_opc(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 
-	while (tmp && tmp->next)
+	while (tmp != NULL && tmp->next != NULL)
 	{
 		count++;
 		tmp = tmp->next;
