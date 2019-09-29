@@ -15,7 +15,7 @@ void sub_opc(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 
-	while (tmp->next)
+	while (tmp && tmp->next)
 	{
 		count++;
 		tmp = tmp->next;
