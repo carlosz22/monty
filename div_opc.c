@@ -15,21 +15,21 @@ void div_opc(stack_t **stack, unsigned int line_number)
 
 	tmp = *stack;
 
-	while (tmp->next)
+	while (tmp && tmp->next)
 	{
 		count++;
 		tmp = tmp->next;
 	};
 
-	lastN = tmp->n;
-	prevN = tmp->prev->n;
-
-	if (count < 1)
+	if (count < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		free_all(1);
 		exit(EXIT_FAILURE);
 	}
+
+	lastN = tmp->n;
+	prevN = tmp->prev->n;
 
 	if (lastN == 0)
 	{
