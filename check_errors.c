@@ -24,9 +24,8 @@ void check_errors(char *token_1, char *token_2, unsigned int line_number)
 			delete = 1;
 		}
 	};
-	if (strcmp(token_1, "pall") == 0 && &(data.stack) == NULL)
+	if (strcmp(token_1, "pall") == 0 && (data.stack) == NULL)
 	{
-		delete = 1;
 		return;
 	};
 	for (i = 0; i < 13; i++)
